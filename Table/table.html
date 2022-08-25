@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<script src="Production.js"></script>
+<body>
+
+
+<h2>Beef and Buffalo Production by Region</h2>
+
+<table id="mytable">
+  <tr>
+    <th>Region</th>
+    <th>Year</th>
+    <th>Tonnes</th>
+  </tr>
+</table>
+
+</body>
+<script>
+    var x=document.getElementById('mytable')
+    for (var i = 0; i <production.length; i++){
+        var myNewRow = document.createElement('tr');
+        var myNewCell1 = document.createElement('td');
+        var myNewCell2 = document.createElement('td');
+        var myNewCell3 = document.createElement('td');
+myNewCell1.innerText=production[i].Region;
+myNewCell2.innerText=production[i].Year;
+myNewCell3.innerText=production[i].Tonnes;
+    myNewRow.append(myNewCell1)
+    myNewRow.append(myNewCell2)
+    myNewRow.append(myNewCell3)
+    x.append(myNewRow)
+    }
+</script>
+</html>
+
