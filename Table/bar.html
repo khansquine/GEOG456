@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bar</title>
+</head>
+<style>
+        #myDiv {
+            background-color: cyan;
+            width: 800px;
+            height: 800px;
+            margin: 300px;
+        }
+        .layout {
+            margin: 300px;
+        }
+        
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.14.0/plotly.min.js" integrity="sha512-XDnqTWsAcVl16AYJoBHumISzIYThowGjR67jeL53NSp6tajsq2qf5UeAWvk1n6Hp3M2iMsV/ewhPScBiLCDs9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="Production.js"></script>
+<body>
+    <div id= "myDiv">
+
+    </div>
+    <script>
+        var y = production.map(e=>Number(e.Tonnes))
+        var x = production.map(e=>e.Year)
+        var trace1 = {
+  x: x,
+  y: y,
+  mode: 'markers',
+  type: 'bar',
+  marker:{color:y, colorscale:'Portland'
+  }
+ }
+
+var layout = {
+    title: {
+        text: 'Cattle and Buffalo Production by Region in 1961, 2000, and 2018'
+    },
+    xaxis: {
+        ticktext: ['Africa', 'Asia', 'Australia and <br>New Zealand', 'Central America', 'Europe', 'Northern America', 'South America'],
+        tickvals: ['Africa 1961', 'Asia 1961', 'Australia & New Zealand 1961', 'Central America 1961', 'Europe 1961', 'Northern America 1961', 'South America 1961'],
+        title: {
+            text: 'Region and Year',
+        },
+    },
+    yaxis: {
+        title: {
+            text: 'Production in Tonnes'
+        }
+    }
+}
+
+var data = [trace1];
+
+Plotly.newPlot('myDiv', data, layout);
+
+    </script>
+
+<p>
+    The first, second, and third bar each correspond to the years 1961, 2000, and 2018 respectively within each country's category.
+    The bar plot does a really good job of depicting the changes for each data point within the year. Improvements would include
+    grouping the bars closer together by country and color coding the bars by year.
+</p>
+</body>
+</html>
