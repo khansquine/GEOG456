@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEE Texas Maps</title>
+</head>
+
+<style>
+    img {
+        position: absolute
+    }
+    /* #Y2005 {
+        visibility: visible;
+    }
+    #Y2020 {
+        visibility: visible;
+    } */
+    .off{
+        visibility: hidden;
+    }
+    .on{
+        visibility: visible;
+    }
+</style>
+<body>
+    <div id = "container">
+        <img id = "Y2005" class = "off" src="./png/Texas_2005.png" alt="">
+        <!-- <img id = "Y2014" src="./png/Texas_2014.png" alt=""> -->
+        <img id = "Y2020" class = "on" src="./png/Texas_2020.png" alt="">
+    </div>
+    <script>
+        var myContainer = document.getElementById("container")
+        // var hidden = 'hidden'
+        myContainer.addEventListener('click', myFunction)
+        // function myFunction(){
+        //     document.getElementById("Y2020").style.visibility = hidden
+        //     hidden = 'visible'
+        // }
+        function myFunction(){
+            var theOn = document.getElementsByClassName('on')[0]
+            var theOff = document.getElementsByClassName('off')[0]
+            theOn.className = 'off'
+            theOff.className = 'on'
+        }
+    </script>
+</body>
+</html>

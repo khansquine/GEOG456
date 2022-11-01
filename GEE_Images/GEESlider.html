@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+</style>
+<body>
+    <input type="range" min="0" max="1" value="0" step=".1" orient="vertical" oninput="myFunction(this.value)"/>
+    <img id = "Y2005" class = "off" src="./png/Texas_2005.png" alt="">
+    <img id = "Y2014" src="./png/Texas_2014.png" alt="">
+    <img id = "Y2020" class = "on" src="./png/Texas_2020.png" alt="">
+<script>
+    var after = document.getElementById('Y2020')
+    function myFunction(value){
+        //console.log(value)
+       Y2020.style.opacity = value;
+     }
+</script>
+</body>
+</html>
