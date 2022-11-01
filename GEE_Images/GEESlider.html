@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TexasSlider</title>
 </head>
 <style>
     img {
@@ -12,9 +12,12 @@
     }
 </style>
 <body>
+    <h1>Land Changes in North East Texas</h1>
+    <h2>Comparison between 2005 and 2020</h2>
     <input type="range" min="0" max="1" value="0" step=".1" orient="vertical" oninput="myFunction(this.value)"/>
+    <br>
     <img id = "Y2005" class = "off" src="./png/Texas_2005.png" alt="">
-    <img id = "Y2014" src="./png/Texas_2014.png" alt="">
+    <!-- <img id = "Y2014" src="./png/Texas_2014.png" alt=""> -->
     <img id = "Y2020" class = "on" src="./png/Texas_2020.png" alt="">
 <script>
     var after = document.getElementById('Y2020')

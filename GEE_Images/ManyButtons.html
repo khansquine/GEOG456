@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        position: absolute;
+        height: 400px;
+    }
+    button{
+        position: absolute;
+        top: 500px;
+    }
+</style>
+<body>
+    <h1>Landscape Changes in North East Texas</h1>
+    <img id='Y2005' src="./png/Texas_2005.png" alt="">
+    <img id='Y2014' src="./png/Texas_2014.png" alt="">
+    <img id='Y2020' src="./png/Texas_2020.png" alt="">
+    <button style="left:10px" onclick="myFunction('Y2005')">2005</button>
+    <button style="left:100px" onclick="myFunction('Y2014')">2014</button>
+    <button style="left:200px" onclick="myFunction('Y2020')">2020</button>
+</body>
+    <script>
+        function myFunction(id) {
+            var imgs = document.getElementsByTagName('img')
+            for(var i = 0; i < imgs.length; i++) {imgs[i].style.visibility='hidden'}
+            var myImg = document.getElementById(id)
+            myImg.style.visibility = 'visible'
+            console.log(myImg)
+        }
+    </script>
+</html>
